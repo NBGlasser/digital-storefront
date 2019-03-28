@@ -30,7 +30,6 @@ var input = function () {
                                 return true
                             }
                             else{
-                                console.log(parseInt(input))
                                 return false
                             }
                         }
@@ -83,7 +82,7 @@ var input = function () {
                             
                             )
                     }
-                    
+                    console.log("Have a nice day!")
                     connection.end();
                 })
                  
@@ -95,13 +94,10 @@ var input = function () {
 var connection = mysql.createConnection({
     host: "localhost",
 
-    // Your port; if not 3306
     port: 3306,
 
-    // Your username
     user: "root",
 
-    // Your password
     password: "password",
     database: "store_DB"
 });
