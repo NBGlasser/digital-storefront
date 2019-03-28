@@ -1,5 +1,5 @@
 # digital-storefront
-![]](screen.png)
+![](screen.png)
 ## What I set out to do
 For this assignment I was trying to make a digital storefront that dynamically updates and logs user input.
 
