@@ -9,6 +9,7 @@ var input = function () {
                 for(var j = 0; j < res.length; j++){
                     //allProducts.push()
                     console.log(res[j].id + ") | Item: " + res[j].name + " | Price: " + res[j].price + "ℳ")
+                    console.log("=============================================")
                 }
                 
                 
@@ -16,7 +17,7 @@ var input = function () {
                 inquirer.prompt([
                     {
                         name: "product",
-                        message: "What would you like to buy?",
+                        message: "Welcome to the Weimar-ket, your one stop shop for low, low prices(for now). What would you like to buy?",
                         type: "rawlist",
                         choices: res
                     },
@@ -66,6 +67,23 @@ var input = function () {
                     else {
                         console.log("Sorry, we don't have enough")
                     }
+                    for(var k = 0; k < res.length; k++){
+                        connection.query(
+                            "UPDATE items SET ? WHERE ?",
+                            [
+                                {
+                                    price: (res[k].price * 1.5)
+                                },
+                                {
+                                    name: res[k].name
+
+                                }
+    
+                            ],
+                            
+                            )
+                    }
+                    
                     connection.end();
                 })
                  
